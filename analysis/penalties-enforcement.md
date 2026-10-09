@@ -12,7 +12,7 @@ Last reviewed: 2026-10-09.
 | | GDPR | NIS2 (via national law) | DORA |
 |---|---|---|---|
 | Max administrative fine | €10 M / 2% (Art. 83(4)); **€20 M / 4%** (Art. 83(5)–(6)) of worldwide annual turnover, higher of | Essential: **≥ €10 M / 2%** max; Important: **≥ €7 M / 1.4%** max (Art. 34(4)–(5)) | Set by Member States (Art. 50(3)); CTPPs: periodic penalty **≤ 1% avg daily worldwide turnover**, ≤ 6 months (Art. 35(6)–(8)) |
-| Non-fine powers | Processing bans, transfer suspension, orders (Art. 58(2)) | Binding instructions, audits, monitoring officer, **suspend certifications**, **bar CEO from managerial functions** (essential; Art. 32(5)) | Cease-and-desist, remedial measures, public notices (Art. 50(4)); contract suspension/termination with CTPPs (Art. 42) |
+| Non-fine powers | Processing bans, transfer suspension, orders (Art. 58(2)) | Binding instructions, audits, monitoring officer, Art. 32(2), (4); suspension of certification / temporary ban on managers: Art. 32(5) (essential entities) | Cease-and-desist, remedial measures, public notices (Art. 50(4)); contract suspension/termination with CTPPs (Art. 42) |
 | Personal liability | — (DPO protected, Art. 38(3)) | Management bodies liable (Art. 20(1)); individuals (Art. 32(6)) | Penalties on management-body members per national law (Art. 50(5)) |
 | Private enforcement | Complaints, compensation, representative actions (Arts. 77–82) | National law | National law |
 | Double jeopardy | — | No NIS2 fine for same conduct already fined under GDPR (Art. 35(2)) | Lex specialis over NIS2 for financial entities (NIS2 Art. 4) |

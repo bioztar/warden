@@ -46,7 +46,14 @@ marketplace, search engine, social network, manufacturing sub-sectors)
 └─ Yes → Medium-sized or larger (≥50 staff OR >€10M turnover AND >€10M balance sheet; Art. 2(1), Rec. 2003/361)?
          ├─ No  → generally out unless Art. 2(2) applies or Member State designates
          └─ Yes → NIS2 APPLIES
-Class: Annex I above medium ceilings (+ QTSP, TLD, DNS any size) → ESSENTIAL (Art. 3(1)); else IMPORTANT (Art. 3(2)).
+Class: ESSENTIAL if any of Art. 3(1)(a)–(g); else IMPORTANT (Art. 3(2)):
+  (a) Annex I entities exceeding medium-sized ceilings
+  (b) qualified trust service providers, TLD registries, DNS service providers — regardless of size
+  (c) medium-sized providers of public electronic communications networks/services
+  (d) central-government public administration entities (Art. 2(2)(f)(i))
+  (e) entities identified as essential by a Member State under Art. 2(2)(b)–(e)
+  (f) critical entities under the CER Directive (EU) 2022/2557 (Art. 2(3))
+  (g) entities identified as operators of essential services before 16 Jan 2023 (if the Member State so provides)
 Financial entity under DORA? → DORA prevails for ICT risk & reporting (Art. 4).
 Jurisdiction: main establishment for digital-infrastructure / digital-provider types (Art. 26).
 ```

@@ -16,6 +16,8 @@ here — it is covered by the sibling skill **`eu-ai-act-compliance`**; flag it,
 > as applying and only when you need a citation you don't have. Open `overlap-matrix.md`,
 > `timeline.md` or `penalties-enforcement.md` only when the output needs them. Never read
 > files speculatively; never read `corpus/` (it is not shipped with the skill).
+>
+> **Estimated cost:** ≈ 5–6k tokens for a typical review (entry + classifier + one checklist + template); each framework file opened adds ≈ 1–3k.
 
 ## Workflow
 

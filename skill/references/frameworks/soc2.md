@@ -12,7 +12,7 @@
 SOC 2 is the security report US (and increasingly global) enterprise buyers ask for. An
 independent CPA firm checks your controls against AICPA criteria and writes an opinion.
 Type I says "controls are well designed on this date"; Type II says "controls worked
-throughout this period" (usually 6–12 months). Security is always included; you can add
+throughout this period" (commonly 3–12 months). Security is always included; you can add
 availability, processing integrity, confidentiality and privacy. It's not a certificate
 and not law — it's evidence your customers' auditors rely on.
 

@@ -20,7 +20,7 @@ Last reviewed: 2026-10-09.
 | 17 Jan 2025 | DORA | Applies | DORA Art. 64 |
 | 17 Jan 2025 | NIS2 | Art. 27 registration (DNS, TLD, cloud, DC, CDN, MSP/MSSP, marketplaces, search, social) | NIS2 Art. 27(2) |
 | 17 Apr 2025 | NIS2 | Member-State lists of essential/important entities | NIS2 Art. 3(3) |
-| 31 Oct 2025 | ISO/IEC 27001 | 2013-edition certificates expire (transition end) — VERIFY: IAF MD 26 | IAF MD 26 |
+| 31 Oct 2025 | ISO/IEC 27001 | 2013-edition certificates expire (transition end) | IAF MD 26 |
 | 17 Oct 2027 | NIS2 | Commission review | NIS2 Art. 40 |
 | ≤ 2028 | NIST AI RMF | Formal review with community input expected | NIST AI 100-1 |
 | VERIFY: | NIS2 | Actual national application per Member State (many transposed late) | Commission transposition tracker |
