@@ -1,0 +1,21 @@
+name: checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  repo-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: skill/references in sync with analysis/ and frameworks/
+        run: scripts/sync-skill.sh --check
+      - name: internal Markdown links resolve; skill stays self-contained
+        run: python3 scripts/check-internal-links.py
+      - name: no copyrighted standard files committed
+        run: |
+          if git ls-files | grep -iE '\.(pdf|docx?)$'; then
+            echo "Binary documents are not allowed (copyright / provenance rule)"; exit 1
+          fi
