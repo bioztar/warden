@@ -1,50 +1,105 @@
 # warden
 
-Compliance knowledge base + cross-harness skill for the security/compliance frameworks
-**other than** the EU AI Act — that one has its own dedicated repo, [`EU-AI-Act`][eu-ai-act],
-and `warden` treats it as a sibling, not a duplicate.
+Compliance & security knowledge base + an installable agent skill for the frameworks
+**outside** the EU AI Act: **GDPR, NIS2, DORA, ISO/IEC 27001, ISO/IEC 42001, SOC 2, NIST AI
+RMF** — plus a supplementary **OWASP Top 10 for LLM Applications** page.
 
-## Why this exists
+Companion to [`bioztar/EU-AI-Act`](https://github.com/bioztar/EU-AI-Act), which covers the EU
+AI Act. warden never duplicates that content: wherever the AI Act is relevant, it links to the
+sibling repo or hands off to its skill, `eu-ai-act-compliance`.
 
-Two uses at once:
+## Who this is for
 
-1. **Client work** — audit / readiness assessments for consulting engagements (e.g. the
-   Almirall-style governed-rollout work), where a claim needs to trace back to a binding
-   article or control, not a vibe.
-2. **Content / authority** — source material for LinkedIn posts and lead-magnet content
-   that needs to be fast to turn into plain language without losing accuracy.
+- **Consultants and auditors doing readiness work** — every obligation is traced to an
+  article / clause / control number and its official source, and `analysis/overlap-matrix.md`
+  shows which single control evidences several frameworks at once.
+- **Engineering and security leads** — each framework file ends in "how it maps onto a real
+  software product" (data handling, logging, access control, incident response, human
+  oversight, vendor management), and there are checklists for codebases, design docs,
+  product ideas and vendor reviews.
+- **People writing about compliance** — every framework file opens with an "In plain
+  language" section and lists common misconceptions; the skill has an explainer mode that
+  keeps the accuracy but moves citations into a short sources footer.
+- **AI agents** (Claude Code, Codex, Pi, other harnesses) — via the self-contained skill in `skill/`.
 
-## Scope (v1 framework set)
+## Three layers
 
-- GDPR
-- NIS2 (Network and Information Security Directive 2)
-- DORA (Digital Operational Resilience Act)
-- ISO/IEC 27001 (information security management)
-- ISO/IEC 42001 (AI management systems)
-- SOC 2
-- NIST AI RMF (AI Risk Management Framework)
-- OWASP LLM Top 10 (stretch goal)
+| Layer | Folder | What it is | Edit rule |
+|---|---|---|---|
+| 1. Sources | `corpus/` | Verbatim EU law (EUR-Lex) and NIST texts; **pointer files only** for copyrighted standards (ISO/IEC, AICPA). Provenance in `corpus/SOURCES.md`. | Never hand-edit; re-fetch with `scripts/update-corpus.sh` |
+| 2. Knowledge | `frameworks/`, `analysis/` | Authored, cited distillations: one file per framework, plus classifier, overlap matrix, timeline, penalties, checklists | Edit here — this is the canonical copy |
+| 3. Skill | `skill/` | Compact `SKILL.md` + `references/` (synced copies of layer 2) — installable, no paths escape `skill/` | Run `scripts/sync-skill.sh` after editing layer 2 |
 
-EU AI Act is explicitly **out of scope here** — see [`EU-AI-Act`][eu-ai-act] for that corpus,
-analysis, and skill. Where a `warden` framework interacts with the AI Act (e.g. ISO 42001
-as a candidate harmonised standard, GDPR's overlap with AI Act transparency duties), the
-relevant `warden` file links to the `EU-AI-Act` file rather than re-explaining it.
+## Quickstart
 
-## Structure (mirrors `EU-AI-Act`)
+```bash
+# Install the skill for Claude Code, Codex and Pi (symlink; --copy to copy instead)
+scripts/install-skill.sh
 
-- `frameworks/<slug>.md` — one file per framework: scope, who it applies to, key
-  obligations, deadlines, penalties, how it maps onto a software product.
-- `analysis/` — cross-framework material: an overlap matrix (which controls satisfy
-  more than one framework at once — this is most of the client value), checklists per
-  artifact type (codebase / design doc / product idea / vendor assessment).
-- `skill/` — installable, cross-harness skill (Claude Code / Pi / Codex) that takes a
-  product or feature description, says which `warden` frameworks + which `EU-AI-Act`
-  obligations it triggers, and produces either an audit checklist or a plain-language
-  explainer.
+# Then, in your agent:
+#   "Which of GDPR / NIS2 / DORA / ISO 27001 / SOC 2 apply to this repo? Give me a readiness checklist."
+#   "Assess this vendor's DPA and SOC 2 report for a DORA-regulated customer."
+#   "Explain NIS2 incident reporting in plain language for a LinkedIn post."
+```
 
-## Status
+Install the sibling skill too, so AI-Act hand-offs work end to end:
+`git clone https://github.com/bioztar/EU-AI-Act && EU-AI-Act/scripts/install-skill.sh`.
 
-Scaffolding only. Framework content, analysis, and the skill are being built — see the
-`helm` mission that tracks this repo for current state.
+## Repository map
 
-[eu-ai-act]: https://github.com/bioztar/EU-AI-Act
+```
+corpus/
+  SOURCES.md                      provenance: path → official source → fetch date
+  eu-law/                         GDPR, NIS2 (+ IR 2024/2690), DORA (+ RTS 2024/1774, 2025/301) — verbatim
+  nist/                           NIST AI 100-1 (AI RMF 1.0), NIST AI 600-1 (GenAI profile) — verbatim
+  standards/                      pointer files only: ISO/IEC 27001, ISO/IEC 42001, AICPA TSC, OWASP
+frameworks/
+  gdpr.md  nis2.md  dora.md  iso-27001.md  iso-42001.md  soc2.md  nist-ai-rmf.md
+  owasp-llm-top10.md              supplementary (lighter coverage)
+analysis/
+  applicability-classifier.md     decision tree: which frameworks apply, which obligations trigger
+  overlap-matrix.md               26 control themes × 7 frameworks (+ AI-Act refs) — build once, evidence many
+  timeline.md                     application dates + incident/request clocks (24 h / 72 h / 4 h …)
+  penalties-enforcement.md        fines, non-fine powers, commercial consequences side-by-side
+  checklists/                     codebase · design-doc · product-idea · vendor-assessment
+skill/
+  SKILL.md                        entry file (name: warden-compliance)
+  references/                     classifier, overlap matrix, timeline, penalties, report &
+                                  explainer templates, EU AI Act hand-off, checklists/, frameworks/
+scripts/
+  update-corpus.sh                re-fetch EU law + NIST (plain curl, no credentials)
+  sync-skill.sh                   copy layer 2 into skill/references (--check in CI)
+  install-skill.sh                install skill into ~/.claude, ~/.codex, ~/.pi
+  check-links.sh                  external URL check
+  check-internal-links.py         relative-link check + skill self-containment
+```
+
+## Conventions
+
+- **Citations:** "GDPR Art. 33(1)", "NIS2 Art. 21(2)(d)", "DORA Art. 30(3)(e)", "ISO/IEC 27001 A.8.15",
+  "ISO/IEC 42001 6.1.4", "SOC 2 CC7.3", "NIST AI RMF MANAGE 2.4", "LLM01:2025".
+- **Uncertainty:** `VERIFY:` = needs checking against a primary source; `ASSUMED:` = inference or
+  market practice. Dates and fine amounts are never invented.
+- **Copyright:** ISO/IEC 27001, ISO/IEC 42001 and the AICPA Trust Services Criteria are copyrighted —
+  warden contains authored summaries and clause/control numbers only. EU law and NIST texts are
+  reproduced verbatim in `corpus/` under their reuse terms (see `corpus/SOURCES.md`).
+- **No client data:** reference material only — no case files, secrets or client artifacts.
+
+## Coverage (v1)
+
+| Framework | Status |
+|---|---|
+| GDPR, NIS2, DORA | Full — verbatim corpus + framework file |
+| ISO/IEC 27001, ISO/IEC 42001, SOC 2 | Full framework file; pointer-only corpus (copyright) |
+| NIST AI RMF (+ GenAI profile) | Full — verbatim corpus + framework file |
+| OWASP LLM Top 10 (2025) | Supplementary — IDs + authored controls + framework hooks |
+| EU AI Act | Out of scope — see [`bioztar/EU-AI-Act`](https://github.com/bioztar/EU-AI-Act) |
+
+Deferred: national NIS2 transposition specifics, DORA Level-2 acts beyond the two RTS in the corpus,
+ISO/IEC 27701, PCI DSS, HIPAA, the EU Cyber Resilience Act and Data Act.
+
+## Disclaimer
+
+Informational material for readiness and education. Not legal advice, not an audit opinion and
+not a certification. Verify against the official texts and, for binding obligations, with qualified
+counsel in the relevant jurisdiction.
