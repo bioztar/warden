@@ -32,6 +32,8 @@ Run `../applicability-classifier.md` on the **buyer** to know which rows are man
 | V14 | Vendor's own supply-chain & secure development | SBOM, SDLC evidence, vulnerability disclosure policy | NIS2 buyers | NIS2 21(3) |
 | V15 | **AI vendor:** model/data provenance, training on your data (opt-out?), eval results, usage policy, model change/deprecation notice | Model card, terms, DPA AI clauses | AI use | 42001 A.10, A.7; NIST GOVERN 6.1–6.2, MANAGE 3.1; OWASP LLM03 |
 | V16 | **AI vendor:** prompt/output retention & isolation | Data-retention terms, zero-retention option, tenant isolation | AI + personal data | GDPR 5(1)(e), 28; OWASP LLM02 |
+| V17 | **Cloud / SaaS vendor:** switching & exit terms — max 2-month notice, ≤ 30-day transition, exportable-data list, switching-charge schedule (none from 12 Jan 2027), third-country access policy | Contract + vendor's published switching/jurisdiction information | Data Act (EU customers) | Data Act Arts. 25, 26, 28, 29, 32 |
+| V18 | **Product / component vendor:** CRA readiness — declared support period, SBOM, CVD policy and security contact, CE marking plan, CRA Art. 14 reporting from 11 Sep 2026 | Vendor documentation, SBOM, CVD policy | CRA (products on the EU market) | CRA Arts. 13(5), 13(8), 14; Annex I Part II |
 
 ## 3. EU AI Act
 

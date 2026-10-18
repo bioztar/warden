@@ -1,6 +1,6 @@
 ---
 name: warden-compliance
-description: Multi-framework compliance & security readiness analysis (GDPR, NIS2, DORA, ISO/IEC 27001, ISO/IEC 42001, SOC 2, NIST AI RMF, OWASP LLM Top 10) for any artifact — codebase, design doc, product idea, or vendor. Determines which frameworks apply, which obligations are triggered (each cited to article/clause/control), where one control satisfies several frameworks, and whether the EU AI Act likely also applies (hands off to `eu-ai-act-compliance`). Outputs a client-facing audit/readiness checklist with citations, or a plain-language explainer with a sources footer. Use when the user says "GDPR", "NIS2", "DORA", "ISO 27001", "ISO 42001", "SOC 2", "NIST AI RMF", "OWASP LLM", "compliance check", "security readiness", "audit readiness", "which regulations apply", "vendor assessment", "DPA review", "explain GDPR/NIS2/DORA in plain language", or asks about breach-notification deadlines, fines or overlapping controls.
+description: Multi-framework compliance & security readiness analysis (GDPR, NIS2, DORA, Cyber Resilience Act, Data Act, ISO/IEC 27001, ISO/IEC 42001, SOC 2, NIST AI RMF, OWASP LLM Top 10) for any artifact — codebase, design doc, product idea, or vendor. Determines which frameworks apply, which obligations are triggered (each cited to article/clause/control), where one control satisfies several frameworks, and whether the EU AI Act likely also applies (hands off to `eu-ai-act-compliance`). Outputs a client-facing audit/readiness checklist with citations, or a plain-language explainer with a sources footer. Use when the user says "GDPR", "NIS2", "DORA", "Cyber Resilience Act", "CRA", "Data Act", "cloud switching", "SBOM", "ISO 27001", "ISO 42001", "SOC 2", "NIST AI RMF", "OWASP LLM", "compliance check", "security readiness", "audit readiness", "which regulations apply", "vendor assessment", "DPA review", "explain GDPR/NIS2/DORA in plain language", or asks about breach-notification deadlines, fines or overlapping controls.
 ---
 
 # warden — compliance & security readiness (non-AI-Act frameworks)
@@ -28,7 +28,7 @@ here — it is covered by the sibling skill **`eu-ai-act-compliance`**; flag it,
    - supplier, SaaS, model API, DPA, security questionnaire → `references/checklists/vendor-assessment.md`
    Identify output mode: **audit** (default) or **explainer** (user asks for plain language, a post, a summary for non-specialists).
 2. **Scope facts.** From `references/applicability-classifier.md` "Inputs", extract: establishment & markets, personal data, sector, size, customer type, AI use, existing certifications. If key facts are missing, ask **one** consolidated question; if the user can't answer, proceed with explicit `ASSUMED:` statements.
-3. **Applicability.** Run classifier Steps 1–7. Produce the applicability table (status: APPLIES / APPLIES (contractual) / VIA SUPPLY CHAIN / RECOMMENDED / NOT TRIGGERED / UNCLEAR). Skip all checks for NOT TRIGGERED frameworks.
+3. **Applicability.** Run classifier Steps 1–7 (incl. 3a CRA, 3b Data Act). Produce the applicability table (status: APPLIES / APPLIES (contractual) / VIA SUPPLY CHAIN / RECOMMENDED / NOT TRIGGERED / UNCLEAR). Skip all checks for NOT TRIGGERED frameworks.
 4. **EU AI Act flag.** Classifier Step 8: if any AI system / GPAI model with an EU nexus is present, output "EU AI Act: LIKELY RELEVANT — run `eu-ai-act-compliance`" with the trigger facts. **Do not** assign an AI-Act risk tier, role or obligation — see `references/eu-ai-act-handoff.md` for the exact hand-off wording. If that skill is installed, invoke it after this report; if not, link <https://github.com/bioztar/EU-AI-Act>.
 5. **Evidence pass.** Walk the chosen checklist. Every finding needs evidence (`path:line`, doc section, or quoted statement) or is marked **unverified**. Never mark "pass" on absence of evidence.
 6. **Cite.** Each finding cites the specific article/clause/control/criterion (e.g. "GDPR Art. 33(1)", "NIS2 Art. 21(2)(d)", "DORA Art. 30(3)(e)", "ISO/IEC 27001 A.8.15", "SOC 2 CC7.3", "NIST AI RMF MANAGE 2.4"). Open the framework reference only if you need to confirm a citation.
@@ -39,8 +39,9 @@ here — it is covered by the sibling skill **`eu-ai-act-compliance`**; flag it,
 ## Rules
 
 - **Citations or it didn't happen.** No obligation claim without article/clause/control number and framework name. Dates you cannot source: `VERIFY:`; inferred facts: `ASSUMED:`. Never invent a date or a fine amount.
-- **Binding vs voluntary.** GDPR, NIS2, DORA are law (NIS2 via national transposition — say so). ISO/IEC 27001, ISO/IEC 42001, SOC 2, NIST AI RMF, OWASP are voluntary unless contractually required. Never say "required by ISO" without "if certified/contractually committed".
+- **Binding vs voluntary.** GDPR, NIS2, DORA, CRA and the Data Act are law (NIS2 via national transposition — say so; CRA mostly applies from 11 Dec 2027, reporting from 11 Sep 2026). ISO/IEC 27001, ISO/IEC 42001, SOC 2, NIST AI RMF, OWASP are voluntary unless contractually required. Never say "required by ISO" without "if certified/contractually committed".
 - **Copyright.** ISO/IEC and AICPA texts are copyrighted: paraphrase, cite numbers, never reproduce clause or criteria wording. EU law may be quoted.
+- **Status labels.** Say whether a rule is *in force*, *adopted but not yet applicable*, or only *proposed* (e.g. Digital Omnibus COM(2025) 837 — not law). Each binding-law framework file's "Status watch" section has the dated list.
 - **No AI-Act logic.** Never restate AI-Act tiers, roles, articles or deadlines; hand off.
 - **No client data retention.** Don't write client artifacts or findings into this skill's files.
 - **Severity:** Critical (likely breach / reportable exposure now) · High (fails audit/customer review) · Medium (weak/partial evidence) · Low (hygiene).
@@ -57,7 +58,7 @@ here — it is covered by the sibling skill **`eu-ai-act-compliance`**; flag it,
 | `references/overlap-matrix.md` | Step 7; any "does X also cover Y?" question |
 | `references/timeline.md` | Deadlines / incident clocks asked or in scope |
 | `references/penalties-enforcement.md` | Exposure / fines asked |
-| `references/frameworks/gdpr.md` · `nis2.md` · `dora.md` · `iso-27001.md` · `iso-42001.md` · `soc2.md` · `nist-ai-rmf.md` · `owasp-llm-top10.md` | Only for frameworks that APPLY and only to confirm a citation, scope rule or explainer wording |
+| `references/frameworks/gdpr.md` · `nis2.md` · `dora.md` · `cra.md` · `data-act.md` · `iso-27001.md` · `iso-42001.md` · `soc2.md` · `nist-ai-rmf.md` · `owasp-llm-top10.md` | Only for frameworks that APPLY and only to confirm a citation, scope rule or explainer wording |
 
 ## Disclaimer (append to every output)
 

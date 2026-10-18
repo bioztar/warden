@@ -5,7 +5,7 @@
 > Pointer file: `corpus/standards/aicpa-tsc-soc2.md`.
 > **Copyright:** no criteria text is reproduced here. Everything below is an **authored
 > summary** with criterion IDs so a reader with the AICPA document can verify.
-> **Type:** voluntary attestation report by an independent CPA firm. **Last reviewed:** 2026-10-09.
+> **Type:** voluntary attestation report by an independent CPA firm. **Last reviewed:** 2026-10-18.
 
 ## In plain language
 
@@ -51,7 +51,7 @@ and not law — it's evidence your customers' auditors rely on.
 | 2017 / 2022 | Current TSC (2017) with revised points of focus (2022) | AICPA |
 | Type 2 period | Commonly 3–12 months; first reports often shorter, then rolling 12 months | AICPA SOC 2 Guide (practice) |
 | Annual | Customers typically expect a new Type 2 every 12 months; **bridge letter** covers gaps between period end and today | Market practice |
-| ASSUMED: | No announced replacement of the 2017 TSC as of 2026-10-09 — check AICPA before advising | — |
+| ASSUMED: | No announced replacement of the 2017 TSC as of 2026-10-18 — the AICPA resource page still offers "2017 Trust Services Criteria (With Revised Points of Focus – 2022)"; check AICPA before advising | AICPA resource page, fetched 2026-10-18 |
 
 ## 4. Enforcement mechanics
 

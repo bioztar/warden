@@ -4,7 +4,7 @@ Every corpus artifact with path → source → format → fetch date. Fetched wi
 no credentials. Re-fetch via `scripts/update-corpus.sh`. Raw HTML/PDF downloads are
 gitignored; only the Markdown conversions are committed.
 
-Fetched on: 2026-10-09.
+Fetched on: 2026-10-09 (GDPR, NIS2, DORA, NIST); 2026-10-18 (CRA, Data Act).
 
 ## Licence rule (read before adding anything)
 
@@ -28,11 +28,15 @@ CELLAR content negotiation: `http://publications.europa.eu/resource/celex/<CELEX
 | dora-regulation-2022-2554.md | 32022R2554 | Regulation (EU) 2022/2554 — DORA | L 333, 27.12.2022 | 64 articles; applies from 17 Jan 2025 (Art. 64) |
 | dora-rts-ict-risk-framework-2024-1774.md | 32024R1774 | Commission Delegated Regulation (EU) 2024/1774 — RTS on ICT risk-management tools/methods and the simplified framework (DORA Arts. 15, 16(3)) | L, 25.6.2024 | 42 articles |
 | dora-rts-incident-reporting-2025-301.md | 32025R0301 | Commission Delegated Regulation (EU) 2025/301 — RTS on content and time limits of major-incident notifications (DORA Art. 20) | L, 2025 | 7 articles; time limits in Art. 5 |
+| cra-regulation-2024-2847.md | 32024R2847 | Regulation (EU) 2024/2847 — Cyber Resilience Act (fetched 2026-10-18) | L, 2024 | 71 articles; applies from 11 Dec 2027, Art. 14 from 11 Sep 2026, Chapter IV from 11 Jun 2026 (Art. 71(2)) |
+| data-act-regulation-2023-2854.md | 32023R2854 | Regulation (EU) 2023/2854 — Data Act (fetched 2026-10-18) | L, 2023 | 50 articles; applies from 12 Sep 2025 (Art. 50) |
 
-Not fetched (pointers only, cite by number): DORA RTS on incident classification
-(Delegated Regulation (EU) 2024/1772), ITS on reporting templates, ITS on the register of
-information (Implementing Regulation (EU) 2024/2956), RTS on TLPT, RTS on ICT-services
-policy for critical or important functions. VERIFY numbers on EUR-Lex before citing.
+Not fetched (pointers only, cite by number; numbers checked against the ESMA DORA page on
+2026-10-18): Delegated Regulations (EU) 2024/1772 (incident classification), 2024/1773
+(contractual-arrangements policy), 2025/532 (subcontracting), 2025/1190 (TLPT), 2024/1502
+(CTPP criteria), 2024/1505 (oversight fees), 2025/295 (oversight conditions), 2025/420
+(joint examination teams); Implementing Regulations (EU) 2024/2956 (register of
+information) and 2025/302 (incident-report forms). Full table: `frameworks/dora.md` §8.
 
 ## corpus/nist/
 
@@ -48,7 +52,7 @@ MAP 1.1–5.2, 22 MEASURE 1.1–4.3, 13 MANAGE 1.1–4.3); 12 GAI risks in AI 60
 
 Pointer files only — see `standards/index.md`. ISO/IEC 27001:2022, ISO/IEC 42001:2023,
 AICPA TSC 2017 (rev. 2022), OWASP LLM Top 10 2025 (IDs verified against
-https://genai.owasp.org/llm-top-10/ on 2026-10-09).
+https://genai.owasp.org/llm-top-10/ on 2026-10-09; still the latest list on 2026-10-18).
 
 ## EU AI Act
 

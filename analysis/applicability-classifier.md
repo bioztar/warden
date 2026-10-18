@@ -1,12 +1,13 @@
 # Applicability classifier — which warden frameworks apply?
 
 Decision tree that turns a product/feature description into a set of applicable
-frameworks, roles, and obligation IDs (G#, N#, D#, I#, A#, CC/criteria, NIST subcategory).
+frameworks, roles, and obligation IDs (G#, N#, D#, CR# (CRA), DA# (Data Act), I#, A#, CC/criteria,
+NIST subcategory).
 Each branch cites the scope rule. Run all branches — frameworks are not mutually exclusive.
 EU AI Act classification is **out of scope** here: Step 8 only flags whether to hand off to
 the `eu-ai-act-compliance` skill.
 
-Last reviewed: 2026-10-09.
+Last reviewed: 2026-10-18.
 
 ## Inputs to extract first (evidence or ask once)
 
@@ -16,6 +17,8 @@ Last reviewed: 2026-10-09.
 4. Size: headcount, turnover, balance sheet (SME test: Recommendation 2003/361/EC).
 5. Customer type: B2B enterprise / regulated FS / public sector / consumer.
 6. AI/ML features? LLM features? Is AI used to make or support decisions about people?
+6a. Does the company sell a product with digital elements (software, firmware, connected device) on
+    the EU market? A connected product or companion app? Cloud / data-processing services?
 7. Existing certifications/reports or customer demands (ISO, SOC 2).
 
 If (1)–(5) are unknown, ask **one** consolidated question; otherwise proceed with stated assumptions.
@@ -71,6 +74,33 @@ One of the 20 financial-entity types (Art. 2(1))?
          └─ No  → DORA not triggered
 ```
 
+## Step 3a — Cyber Resilience Act (CRA)
+
+```
+Makes available on the EU market a product with digital elements (hardware or software) whose
+intended or foreseeable use includes a data connection to a device or network (Art. 2(1))?
+├─ No  → Pure SaaS with no product shipped? → generally NOT TRIGGERED (ASSUMED; check "remote
+│        data processing", Art. 3) · supplier of components → VIA SUPPLY CHAIN (Art. 13(5))
+└─ Yes → Excluded by Art. 2(2)–(7) (medical devices, vehicles, aviation, marine, defence)?
+         ├─ Yes → NOT TRIGGERED
+         └─ No  → CRA APPLIES (adopted, in force; reporting from 11 Sep 2026, all duties 11 Dec 2027)
+Role: manufacturer (Art. 13–14) · importer (Art. 19) · distributor (Art. 20) · OSS steward (Art. 24)
+Class: Annex III → important (Class I/II, Art. 7) · Annex IV → critical (Art. 8) · else default
+Triggered IDs: CR1–CR7 for manufacturers; CR7 already live from 11 Sep 2026.
+```
+
+## Step 3b — Data Act
+
+```
+Manufactures a connected product or provides a related service placed on the EU market (Art. 1(3)(a))?
+├─ Yes → micro/small enterprise without larger partner/linked enterprises (Art. 7(1))?
+│        ├─ Yes → Chapter II NOT TRIGGERED
+│        └─ No  → DATA ACT APPLIES: DA1–DA6 (DA1 for products placed on the market after 12 Sep 2026)
+Provides data processing services (cloud, SaaS, PaaS, IaaS) to customers in the EU (Art. 1(3)(f))?
+└─ Yes → DATA ACT APPLIES: switching DA8–DA11, government access DA12 (regardless of size)
+Holds data subject to a public-sector exceptional-need request? → DA7
+```
+
 ## Step 4 — ISO/IEC 27001
 
 ```
@@ -101,6 +131,7 @@ Product develops, provides or uses AI/ML?
 | Framework | Status | Basis | Role/class | Triggered obligation IDs |
 |---|---|---|---|---|
 | e.g. GDPR | APPLIES | Art. 3(1) EU establishment | Processor + controller | G6, G10, G12, G13, G17 |
+| e.g. Data Act | APPLIES | Art. 1(3)(f) data processing service | Provider | DA8–DA12 |
 
 Status vocabulary: **APPLIES** (binding law) · **APPLIES (contractual)** · **VIA SUPPLY CHAIN**
 · **RECOMMENDED** · **NOT TRIGGERED** · **UNCLEAR — ASSUMED: …**.
