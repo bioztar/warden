@@ -5,7 +5,8 @@
 > warden stores IDs/names plus **authored** summaries only; follow the link for OWASP's text.
 > **Type:** voluntary security awareness list, not a legal or certifiable standard.
 > **Status in warden v1:** supplementary — lighter coverage than the seven core frameworks.
-> **Last reviewed:** 2026-10-09.
+> **Last reviewed:** 2026-10-18 (genai.owasp.org still presents the 2025 list as the latest; no
+> newer LLM Top 10 published — fetched 2026-10-18).
 
 ## In plain language
 

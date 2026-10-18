@@ -4,7 +4,7 @@
 > and NIST AI 600-1 (July 2024) <https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf>.
 > Local copies: `corpus/nist/nist-ai-100-1.md`, `corpus/nist/nist-ai-600-1.md` (US Government
 > works, not subject to US copyright — quotes are verbatim).
-> **Type:** voluntary framework. **Not law.** **Last reviewed:** 2026-10-09.
+> **Type:** voluntary framework. **Not law.** **Last reviewed:** 2026-10-18.
 
 ## In plain language
 
@@ -61,6 +61,8 @@ suggested actions to AI RMF subcategories (action IDs like GV-1.1-001, MS-2.7-xx
 | 26 Jan 2023 | AI RMF 1.0 released | NIST AI 100-1 |
 | Jul 2024 | Generative AI Profile released | NIST AI 600-1 |
 | No later than 2028 | Formal review with input from the AI community expected | NIST AI 100-1, Overview |
+| 7 Apr 2026 | NIST released a **concept note** for an AI RMF Profile on Trustworthy AI in Critical Infrastructure — a concept note, not a published profile | NIST AI RMF page, fetched 2026-10-18 |
+| In progress | NIST states: "The AI RMF 1.0 is being revised as part of the White House AI Action Plan." No revised version published as of 2026-10-18 — keep citing AI 100-1 (1.0) | NIST AI RMF page, fetched 2026-10-18 |
 | — | No compliance deadlines (voluntary) | — |
 
 ## 4. Enforcement mechanics
@@ -100,3 +102,4 @@ consumer-protection issues under general law — outside this repo's scope.
 - NIST AI 100-1: <https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf>
 - NIST AI 600-1: <https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf>
 - NIST AI RMF resource centre: <https://airc.nist.gov/>
+- NIST AI RMF page (revision and profile news): <https://www.nist.gov/itl/ai-risk-management-framework>

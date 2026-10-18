@@ -4,7 +4,8 @@
 > <https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2554> · local copy
 > `corpus/eu-law/dora-regulation-2022-2554.md`. Level-2 acts in corpus: Delegated Regulation
 > (EU) 2024/1774 (ICT risk-management RTS) and (EU) 2025/301 (incident-report content & time limits).
-> **Type:** binding regulation, directly applicable. **Last reviewed:** 2026-10-09.
+> Full Level-2 list and CTPP designations: §8.
+> **Type:** binding regulation, directly applicable. **Last reviewed:** 2026-10-18.
 
 ## In plain language
 
@@ -68,7 +69,8 @@ Key quote:
 | Final: **≤1 month** after latest updated intermediate report | Root cause, remediation, costs | RTS 2025/301 Art. 5(1)(c) |
 | Yearly | Framework review; testing of critical-function systems; register-of-information reporting to authority | Arts. 6(5), 24(6), 28(3) |
 | Every 3 years | TLPT for identified entities | Art. 26(1) |
-| VERIFY: | First register-of-information submission dates were set nationally/by ESAs during 2025; check competent-authority instructions. | Art. 28(3); ITS (EU) 2024/2956 |
+| 30 Apr 2025 | First cycle: competent authorities submit the registers of information they collected to the ESAs (ESAs roadmap, 18 Feb 2025). Financial entities' submission dates to their competent authority were set nationally — VERIFY with the authority | Art. 28(3); ITS (EU) 2024/2956; ESAs roadmap |
+| 18 Nov 2025 | ESAs published the **first list of 19 designated CTPPs** (§8); list updated annually | Art. 31(9); ESAs list |
 | Weekend / bank holiday | Deadline may slip to noon of next working day — **not** for initial/intermediate reports of credit institutions, CCPs, trading venues and NIS2 essential/important entities. If any deadline will be missed, inform the authority before it expires and explain. | RTS 2025/301 Art. 5(3)–(5) |
 
 ## 4. Penalties & enforcement
@@ -113,12 +115,55 @@ tested and covered by continuity and third-party controls.
 
 - "DORA only applies to banks." — 20 entity types incl. crypto, insurers, intermediaries and fund managers (Art. 2(1)).
 - "We're a SaaS vendor, so DORA doesn't apply." — Not directly unless designated CTPP, but Art. 30 terms flow into your contracts.
+- "Only the 19 listed CTPPs matter." — Designation adds direct ESA oversight; every ICT provider still gets Art. 28–30 obligations through contracts and appears in customers' registers of information.
 - "Same timeline as NIS2." — DORA's initial notification is tied to classification (≤4 h) as well as awareness (≤24 h).
 - "Fines are 2% of turnover." — DORA leaves financial-entity fines to Member States; the 1%-of-daily-turnover figure is a periodic penalty payment for CTPPs only.
 
-## Sources
+## 8. Status watch (checked 2026-10-18)
+
+**Level-2 acts — all adopted & in force** (list from the ESMA DORA page, fetched 2026-10-18):
+
+| Act | Subject | DORA basis |
+|---|---|---|
+| Delegated Reg. (EU) 2024/1772 | Classification of ICT-related incidents and cyber threats | Art. 18(3) |
+| Delegated Reg. (EU) 2024/1773 | Policy on contractual arrangements for ICT services supporting critical or important functions | Art. 28(10) |
+| Delegated Reg. (EU) 2024/1774 | ICT risk-management framework and simplified framework | Arts. 15, 16 |
+| Implementing Reg. (EU) 2024/2956 | Standard templates for the register of information | Art. 28(9) |
+| Delegated Reg. (EU) 2025/301 | Content and time limits of incident reports | Art. 20(a) |
+| Implementing Reg. (EU) 2025/302 | Standard forms, templates and procedures for incident reports | Art. 20 |
+| Delegated Reg. (EU) 2025/532 | Subcontracting of ICT services supporting critical or important functions (adopted after the Commission rejected the ESAs' first draft; ESAs opinion 7 Mar 2025) | Art. 30(5) |
+| Delegated Reg. (EU) 2025/1190 | Threat-led penetration testing (TLPT) | Art. 26(11) |
+| Delegated Reg. (EU) 2024/1502 | Criteria for designating CTPPs | Art. 31 (ESMA page: "Art. 31.8") |
+| Delegated Reg. (EU) 2024/1505 | Oversight fees | Art. 43(2) |
+| Delegated Reg. (EU) 2025/295 | Harmonised conditions for oversight activities | Art. 41(1)(a),(b),(d) |
+| Delegated Reg. (EU) 2025/420 | Joint examination team composition | Art. 41(1)(c) |
+
+**Register of information.** ITS (EU) 2024/2956 fixes the templates. The ESAs' first
+collection ran in 2025: competent authorities passed registers to the ESAs by 30 Apr 2025
+to feed CTPP designation (ESAs roadmap, 18 Feb 2025; EBA RoI reporting page). Expect a
+yearly cycle (Art. 28(3)); the reporting date for each financial entity is set by its
+competent authority.
+
+**CTPP designation.** The ESAs' list of designated CTPPs (PDF dated 18 Nov 2025, "in
+accordance with Article 31(9)"), in the list's order: Accenture plc; Amazon Web Services
+EMEA Sarl; Bloomberg L.P.; Capgemini SE; Colt Technology Services; Deutsche Telekom AG;
+Equinix (EMEA) B.V.; Fidelity National Information Services, Inc.; Google Cloud EMEA Limited;
+International Business Machine Corporation; InterXion HeadQuarters B.V.; Kyndryl Inc.; LSEG
+Data and Risk Limited; Microsoft Ireland Operations Limited; NTT DATA Inc.; Oracle Nederland
+B.V.; Orange SA; SAP SE; Tata Consultancy Services Limited. The ESAs "publish and update the
+list of CTPPs across the EU on an annual basis" (ESMA DORA oversight page). A provider can
+also apply to be designated (opt-in route described on the ESMA DORA oversight page).
+
+**Proposed:** the Digital Omnibus COM(2025) 837 would route DORA major-incident reports
+through a single EU entry point ("Ongoing" on EUR-Lex). Not law.
+
 
 - Regulation (EU) 2022/2554 (DORA): <https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2554>
 - Delegated Regulation (EU) 2024/1774 (ICT risk RTS): <https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1774>
 - Delegated Regulation (EU) 2025/301 (incident-report RTS): <https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0301>
+- ESMA DORA page (Level-2 list): <https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/digital-operational-resilience-act-dora>
+- ESAs list of designated CTPPs (18 Nov 2025): <https://www.esma.europa.eu/sites/default/files/2025-11/List_of_designated_CTPPs.pdf>
+- ESMA DORA oversight page: <https://www.esma.europa.eu/dora-oversight>
+- ESAs roadmap towards CTPP designation (18 Feb 2025): <https://www.eiopa.europa.eu/esas-provide-roadmap-towards-designation-ctpps-under-dora-2025-02-18_en>
+- EBA register-of-information reporting page: <https://www.eba.europa.eu/activities/direct-supervision-and-oversight/digital-operational-resilience-act/preparation-dora-application>
 - ESAs DORA landing page (Joint Committee): <https://www.eiopa.europa.eu/digital-operational-resilience-act-dora_en>

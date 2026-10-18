@@ -1,4 +1,4 @@
-<!-- Pointer file, written 2026-10-09. No standard text stored (copyright ISO/IEC). -->
+<!-- Pointer file, written 2026-10-09, status re-checked 2026-10-18 (still one amendment: Amd 1:2024). No standard text stored (copyright ISO/IEC). -->
 # ISO/IEC 27001:2022 — Information security, cybersecurity and privacy protection — Information security management systems — Requirements
 
 - **Publisher:** ISO / IEC (JTC 1/SC 27). Edition 3, published October 2022.

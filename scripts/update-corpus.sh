@@ -47,6 +47,8 @@ fetch_celex 32024R2690 corpus/eu-law/nis2-implementing-regulation-2024-2690
 fetch_celex 32022R2554 corpus/eu-law/dora-regulation-2022-2554
 fetch_celex 32024R1774 corpus/eu-law/dora-rts-ict-risk-framework-2024-1774
 fetch_celex 32025R0301 corpus/eu-law/dora-rts-incident-reporting-2025-301
+fetch_celex 32024R2847 corpus/eu-law/cra-regulation-2024-2847
+fetch_celex 32023R2854 corpus/eu-law/data-act-regulation-2023-2854
 
 echo "== NIST =="
 fetch_nist https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf corpus/nist/nist-ai-100-1 \

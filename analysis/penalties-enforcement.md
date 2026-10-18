@@ -1,11 +1,11 @@
 # Penalties & enforcement — side-by-side
 
-Binding law (GDPR, NIS2, DORA) carries regulatory penalties; standards and frameworks
+Binding law (GDPR, NIS2, DORA, CRA, Data Act) carries regulatory penalties; standards and frameworks
 (ISO/IEC 27001, ISO/IEC 42001, SOC 2, NIST AI RMF, OWASP) carry **commercial** consequences
 only. EU AI Act penalties: see
 <https://github.com/bioztar/EU-AI-Act/blob/main/analysis/penalties-enforcement.md>.
 
-Last reviewed: 2026-10-09.
+Last reviewed: 2026-10-18.
 
 ## 1. Binding law
 
@@ -17,6 +17,16 @@ Last reviewed: 2026-10-09.
 | Private enforcement | Complaints, compensation, representative actions (Arts. 77–82) | National law | National law |
 | Double jeopardy | — | No NIS2 fine for same conduct already fined under GDPR (Art. 35(2)) | Lex specialis over NIS2 for financial entities (NIS2 Art. 4) |
 | Publication | National practice | National practice | Mandatory publication of final penalties (Art. 54) |
+
+| | CRA (applies 11 Dec 2027; Art. 14 from 11 Sep 2026) | Data Act (applies since 12 Sep 2025) |
+|---|---|---|
+| Max administrative fine | **€15 M / 2.5%** (Annex I, Arts. 13–14); **€10 M / 2%** (other obligations); **€5 M / 1%** (incorrect information) — higher of (Art. 64(2)–(4)) | Member States set penalties (Art. 40(1)); DPAs may fine Chapters II, III, V infringements up to the GDPR Art. 83(5) amount (Art. 40(4)) |
+| Non-fine powers | Corrective action, withdrawal, recall by market surveillance authorities (Arts. 52–58) | Competent authorities, complaints and judicial remedy (Arts. 37–39) |
+| Carve-outs | No fines on micro/small manufacturers for missing the 24 h early warning, nor on open-source software stewards (Art. 64(10)) | Chapter II data-sharing duties do not apply to micro/small enterprises' products (Art. 7(1)) |
+
+Pending (**proposed, not law**): Digital Omnibus COM(2025) 837 and Omnibus IV COM(2025) 501
+would change GDPR breach-notification and record-keeping duties; see `frameworks/gdpr.md` §8.
+Adopted, not yet applicable: Reg. (EU) 2025/2518 (GDPR enforcement procedure, from 2 Apr 2027).
 
 ## 2. Voluntary standards / frameworks
 

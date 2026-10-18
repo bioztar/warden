@@ -6,7 +6,8 @@
 > CELEX 32024R2690 — `corpus/eu-law/nis2-implementing-regulation-2024-2690.md`.
 > **Type:** directive — binds Member States, reaches companies **through national
 > transposition laws**. Always check the national law of each Member State where the
-> entity is established. **Last reviewed:** 2026-10-09.
+> entity is established. **Last reviewed:** 2026-10-18 (transposition status and pending
+> amendments: §8).
 
 ## In plain language
 
@@ -46,7 +47,10 @@ Leadership can be held personally accountable.
 
 Detailed technical requirements for DNS, TLD, cloud, data-centre, CDN, MSP/MSSP,
 marketplace, search, social-network and trust-service providers: Implementing Regulation
-(EU) 2024/2690, Annex (point-by-point specification of Art. 21(2)(a)–(j)).
+(EU) 2024/2690, Annex (point-by-point specification of Art. 21(2)(a)–(j)). In force and
+unchanged as of 2026-10-18. ENISA's **NIS2 Technical Implementation Guidance** (published
+26 Jun 2025) gives non-binding advice, examples of evidence and a mapping table for those
+requirements.
 
 Key quote:
 
@@ -68,7 +72,8 @@ Key quote:
 | **≤72 h** of awareness | Incident notification (initial assessment, severity, impact, IoCs) | Art. 23(4)(b) |
 | ≤1 month after notification | Final report (or progress report if ongoing, final within 1 month of handling) | Art. 23(4)(d)–(e) |
 | 17 Oct 2027 | Commission review of the Directive | Art. 40 |
-| VERIFY: | National transposition status varies; many Member States transposed late. Check the Commission's transposition tracker / national gazette before stating an entity's live obligations. | — |
+| 7 May 2025 | Commission sent **reasoned opinions** to 19 Member States for failing to notify full transposition (list in §8) | Commission NIS2 transposition page |
+| VERIFY: | National status changes faster than the Commission pages; check the Member State's official gazette before stating an entity's live obligations (§8) | — |
 
 ## 4. Penalties & enforcement
 
@@ -118,9 +123,50 @@ risk tier. For AI Act classification use **`eu-ai-act-compliance`** /
 - "We're not critical infrastructure, so we're out." — Annex II covers manufacturers, digital providers and B2B managed services; size rule catches mid-sized firms.
 - "Financial entities do both NIS2 and DORA." — DORA is lex specialis for ICT risk/incident reporting (NIS2 Art. 4; DORA Recital 16).
 - "24 hours = full report." — 24 h is an early warning; full notification at 72 h.
+- "The 2026 NIS2 amendments / single-entry point already apply." — Both are Commission proposals under negotiation (§8).
+- "Our country missed the deadline, so we can wait." — A late transposition law can apply at short notice, and customers in transposed Member States already flow NIS2 requirements down by contract. How an untransposed directive affects a company is a national-law question: VERIFY with national counsel.
 
-## Sources
+## 8. Status watch (checked 2026-10-18)
+
+**Transposition per Member State.** Source: the Commission's per-country "NIS2 Directive
+implementation in …" pages, linked from the transposition page (fetched 2026-10-18). Those
+pages are a state of play based on what Member States report, "without prejudice to the
+formal assessment" of compliance, and some have not been updated since May 2025. A national
+law adopted after the last page update will not show yet, so treat "reasoned opinion" as
+"not fully notified to the Commission as of the page's last update", not as proof that no
+law exists.
+
+| Commission page status | Member States |
+|---|---|
+| "Transposed." | Belgium, Croatia, Greece, Italy, Lithuania, Romania, Slovakia |
+| "Not yet transposed." | Malta |
+| "On 7 May 2025 the Commission sent a reasoned opinion for failure to notify full transposition." | Austria, Bulgaria, Cyprus, Czechia, Denmark, Estonia, Finland, France, Germany, Hungary, Ireland, Latvia, Luxembourg, Netherlands, Poland, Portugal, Slovenia, **Spain**, Sweden |
+
+**Spain.** The Commission's Spain page says: "On 7 May 2025 the Commission sent a reasoned
+opinion for failure to notify full transposition." A search of the BOE consolidated-legislation
+database (title contains "ciberseguridad", 2026-10-18) returned no NIS2 transposition law;
+the latest hits were Ley 15/2017 (Catalan cybersecurity agency) and 2018–2019 orders.
+Status: **not transposed as far as the official sources checked show**. VERIFY on boe.es
+before advising a Spanish entity; the law in force remains Real Decreto-ley 12/2018, de 7 de
+septiembre, de seguridad de las redes y sistemas de información (NIS1 transposition;
+BOE-A-2018-12257, fetched 2026-10-18).
+
+**Infringement procedure.** Letters of formal notice → reasoned opinions (7 May 2025, 19
+Member States, two months to respond) → possible referral to the CJEU. The Commission page
+checked does not record any referral; VERIFY in the Commission infringements database.
+
+| Status | Item | Source (fetched 2026-10-18) |
+|---|---|---|
+| Adopted & in force | Implementing Regulation (EU) 2024/2690 (technical and methodological requirements, significant-incident thresholds for digital providers) | EUR-Lex CELEX 32024R2690 |
+| Non-binding guidance | ENISA NIS2 Technical Implementation Guidance (26 Jun 2025); Commission guidelines on Art. 3(4) and Art. 4(1)–(2) | ENISA publication page; Commission NIS2 page |
+| **Proposed** | Targeted NIS2 amendments, Commission cybersecurity package of **20 Jan 2026** ("simplification measures and alignment with the Cybersecurity Act"): simpler jurisdiction rules, ransomware data collection, cross-border supervision with a reinforced ENISA role | Commission library page |
+| **Proposed** | Digital Omnibus COM(2025) 837 — single-entry point for incident reporting covering NIS2, GDPR, DORA, eIDAS, CER ("report once, share many") | EUR-Lex CELEX 52025PC0837 ("Ongoing") |
+
 
 - Directive (EU) 2022/2555 (NIS2), EUR-Lex: <https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2555>
 - Commission Implementing Regulation (EU) 2024/2690: <https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2690>
+- Commission NIS2 transposition page (per-country links): <https://digital-strategy.ec.europa.eu/en/policies/nis-transposition>
+- Commission page, NIS2 in Spain: <https://digital-strategy.ec.europa.eu/en/policies/nis2-directive-spain>
+- Proposal on NIS2 targeted amendments (20 Jan 2026): <https://digital-strategy.ec.europa.eu/en/library/proposal-directive-regards-simplification-measures-and-alignment-cybersecurity-act>
+- ENISA NIS2 Technical Implementation Guidance: <https://www.enisa.europa.eu/publications/nis2-technical-implementation-guidance>
 - Commission Recommendation 2003/361/EC (SME definition): <https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32003H0361>

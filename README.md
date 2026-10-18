@@ -1,8 +1,9 @@
 # warden
 
 Compliance & security knowledge base + an installable agent skill for the frameworks
-**outside** the EU AI Act: **GDPR, NIS2, DORA, ISO/IEC 27001, ISO/IEC 42001, SOC 2, NIST AI
-RMF** — plus a supplementary **OWASP Top 10 for LLM Applications** page.
+**outside** the EU AI Act: **GDPR, NIS2, DORA, Cyber Resilience Act (CRA), Data Act, ISO/IEC
+27001, ISO/IEC 42001, SOC 2, NIST AI RMF** — plus a supplementary **OWASP Top 10 for LLM
+Applications** page. Last freshness review: 2026-10-18 (`scripts/freshness-report-2026-10-18.md`).
 
 Companion to [`bioztar/EU-AI-Act`](https://github.com/bioztar/EU-AI-Act), which covers the EU
 AI Act. warden never duplicates that content: wherever the AI Act is relevant, it links to the
@@ -50,15 +51,15 @@ Install the sibling skill too, so AI-Act hand-offs work end to end:
 ```
 corpus/
   SOURCES.md                      provenance: path → official source → fetch date
-  eu-law/                         GDPR, NIS2 (+ IR 2024/2690), DORA (+ RTS 2024/1774, 2025/301) — verbatim
+  eu-law/                         GDPR, NIS2 (+ IR 2024/2690), DORA (+ RTS 2024/1774, 2025/301), CRA, Data Act — verbatim
   nist/                           NIST AI 100-1 (AI RMF 1.0), NIST AI 600-1 (GenAI profile) — verbatim
   standards/                      pointer files only: ISO/IEC 27001, ISO/IEC 42001, AICPA TSC, OWASP
 frameworks/
-  gdpr.md  nis2.md  dora.md  iso-27001.md  iso-42001.md  soc2.md  nist-ai-rmf.md
+  gdpr.md  nis2.md  dora.md  cra.md  data-act.md  iso-27001.md  iso-42001.md  soc2.md  nist-ai-rmf.md
   owasp-llm-top10.md              supplementary (lighter coverage)
 analysis/
   applicability-classifier.md     decision tree: which frameworks apply, which obligations trigger
-  overlap-matrix.md               26 control themes × 7 frameworks (+ AI-Act refs) — build once, evidence many
+  overlap-matrix.md               26 control themes × 9 frameworks (+ AI-Act refs) — build once, evidence many
   timeline.md                     application dates + incident/request clocks (24 h / 72 h / 4 h …)
   penalties-enforcement.md        fines, non-fine powers, commercial consequences side-by-side
   checklists/                     codebase · design-doc · product-idea · vendor-assessment
@@ -71,6 +72,7 @@ scripts/
   sync-skill.sh                   copy layer 2 into skill/references (--check in CI)
   install-skill.sh                install skill into ~/.claude, ~/.codex, ~/.pi
   check-links.sh                  external URL check
+  freshness-report-YYYY-MM-DD.md  dated freshness reviews: what changed, with sources
   check-internal-links.py         relative-link check + skill self-containment
 ```
 
@@ -85,18 +87,20 @@ scripts/
   reproduced verbatim in `corpus/` under their reuse terms (see `corpus/SOURCES.md`).
 - **No client data:** reference material only — no case files, secrets or client artifacts.
 
-## Coverage (v1)
+## Coverage
 
 | Framework | Status |
 |---|---|
-| GDPR, NIS2, DORA | Full — verbatim corpus + framework file |
+| GDPR, NIS2, DORA | Full — verbatim corpus + framework file (each with a dated "status watch" of adopted vs proposed changes) |
+| Cyber Resilience Act, Data Act | Concise framework file + verbatim corpus (added 2026-10-18) |
 | ISO/IEC 27001, ISO/IEC 42001, SOC 2 | Full framework file; pointer-only corpus (copyright) |
 | NIST AI RMF (+ GenAI profile) | Full — verbatim corpus + framework file |
 | OWASP LLM Top 10 (2025) | Supplementary — IDs + authored controls + framework hooks |
 | EU AI Act | Out of scope — see [`bioztar/EU-AI-Act`](https://github.com/bioztar/EU-AI-Act) |
 
-Deferred: national NIS2 transposition specifics, DORA Level-2 acts beyond the two RTS in the corpus,
-ISO/IEC 27701, PCI DSS, HIPAA, the EU Cyber Resilience Act and Data Act.
+Deferred: national NIS2 transposition law contents (warden tracks status only), verbatim copies of
+DORA Level-2 acts beyond the two RTS in the corpus (listed and cited in `frameworks/dora.md` §8),
+CRA implementing/delegated acts, ISO/IEC 27701, PCI DSS, HIPAA.
 
 ## Disclaimer
 

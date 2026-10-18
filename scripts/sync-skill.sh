@@ -22,6 +22,8 @@ analysis/checklists/vendor-assessment.md:checklists/vendor-assessment.md
 frameworks/gdpr.md:frameworks/gdpr.md
 frameworks/nis2.md:frameworks/nis2.md
 frameworks/dora.md:frameworks/dora.md
+frameworks/cra.md:frameworks/cra.md
+frameworks/data-act.md:frameworks/data-act.md
 frameworks/iso-27001.md:frameworks/iso-27001.md
 frameworks/iso-42001.md:frameworks/iso-42001.md
 frameworks/soc2.md:frameworks/soc2.md

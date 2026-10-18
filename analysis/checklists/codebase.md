@@ -40,6 +40,7 @@ fail an audit or customer review · **Medium** = weak evidence / partial · **Lo
 | C20 | AI: eval suite in CI | Accuracy/safety/bias/regression evals gating model or prompt changes | Medium | NIST MEASURE 2.3–2.11; 42001 A.6 |
 | C21 | AI: input/output logging for monitoring | Privacy-aware logging of prompts/outputs/tool calls with retention | Medium | NIST MEASURE 3.1; 42001 A.6; GDPR 5(1)(e) |
 | C22 | Vendor data flows match DPAs | Every external data recipient in C-discovery has a DPA/sub-processor entry | High | GDPR 28; DORA 28(3); SOC 2 CC9.2 |
+| C23 | Product security for shipped software (CRA, if the product is placed on the EU market) | SBOM generated in CI (machine-readable, at least top-level dependencies), `SECURITY.md` / CVD policy with contact, signed update channel, declared support period | High (CRA reporting live from 11 Sep 2026) | CRA Arts. 13(5), 13(8), 14; Annex I Part II(1), (5)–(7) |
 
 ## 3. EU AI Act flag
 
